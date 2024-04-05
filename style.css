@@ -1,0 +1,225 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: "Roboto Mono", monospace;
+}
+
+body{
+    background: rgb(2,0,36);
+    background: linear-gradient(45deg, rgba(2,0,36,1) 0%, rgba(112,140,143,1) 100%);
+    height: 100vh;
+    /* dont scroll bish */
+    overflow: hidden;
+}
+
+h1{
+    text-align: center;
+    color: white;
+}
+
+h1 span {
+    color: black;
+    text-decoration: line-through;
+}
+
+.main-container {
+    padding: 30px;
+    width: 80%;
+    margin: 80px auto;
+    border-radius: 10px;
+    /* multi lvl box shadow never seen something like fr */
+    /* box-shadow: 
+    rgba(240, 46, 170, 0.4) -5px 5px, 
+    rgba(240, 46, 170, 0.3) -10px 10px, 
+    rgba(240, 46, 170, 0.2) -15px 15px, 
+    rgba(240, 46, 170, 0.1) -20px 20px, 
+    rgba(240, 46, 170, 0.05) -25px 25px; */
+}
+
+
+.fa-note-sticky {
+    font-size: 1.3rem;
+    margin-left: 5%;
+    color: #8C8C88;
+}
+
+.todo-items-entry {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-top: 1%;
+    background-color: #BFBFBD;
+    border-radius: 10px;
+    padding: 10px;
+    position: relative;
+    /* background-color: blue; */
+}
+
+.todo-items-entry label {
+    display: none;
+}
+
+.todo-items-entry input {
+    flex: 1;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    padding: 10px;
+    font-weight: 0.5rem;
+    cursor: pointer;
+}
+
+
+.todo-items-entry #my-add-btn {
+    background-color: rgba(24, 80, 122, 1);
+    border: none;
+    outline: none;
+    padding: 16px 30px;
+    border-radius: 10px;
+    font-weight: bold;
+    position: absolute;
+    right: 5px;
+}
+
+#my-delete-btn {
+    background-color: rgba(183, 76, 76, 1);
+    font-size: 20px;
+    position: absolute;
+    top: 90px;
+    border: none;
+    outline: none;
+    padding: 16px 30px;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+.todo-items-entry #my-add-btn:hover {
+    background-color: rgba(24, 80, 122, 0.5);
+    cursor: pointer;
+}
+
+.todo-items-entry #my-add-btn .fa-plus {
+    font-size: 1rem;
+}
+
+.todo-items-disp {
+    margin-top: 20px;
+}
+
+
+ul li {
+    list-style-type: none;
+    color: white;
+    padding: 10px;
+    margin-left: 40px;
+    margin-bottom: 20px;
+    position: relative;
+    font-size: 1rem;
+    /* background-color: #555; */
+}
+
+
+ul li::before{
+    content: '';
+    position: absolute;
+    height: 30px;
+    width: 30px;
+    /* border-radius: 50%; */
+    background-image: url(Images/uncheckedWhite.png);
+    background-size: cover;
+    background-position: center;
+    top: 5px;
+    left: -30px;
+}
+
+ul li.checked {
+    color: #555;
+    text-decoration: line-through;
+}
+
+ul li.checked::before {
+    background-image: url(Images/checkWhite.png);
+}
+
+ul li span {
+    background-color: rgba(183, 76, 76, 1);
+    position: absolute;
+    right: 15px;
+    top: 0px;
+    width: 30px;
+    height: 30px;
+    font-size: 20px;
+    color: #555;
+    line-height: 30px;
+    text-align: center;
+    border-radius: 5px;
+}
+
+ul li span:hover {
+    background-color: rgba(183, 76, 76, 0.5);
+    cursor: pointer;
+}
+
+p {
+    position: absolute;
+    bottom: 1px;
+    right: 1%;
+    color: white;
+}
+
+/* for mobile devices */
+
+@media only screen and (max-width: 700px){
+    .main-container {
+        padding: 0px;
+        width: 90%;
+        margin: 100px auto;
+    }
+
+    .todo-items-entry {
+        padding: 5px;
+    }
+
+    .todo-items-entry #my-add-btn {
+        padding: 10px 15px;
+        right: 10px;
+    }
+    
+    #my-delete-btn {
+        font-size: 15px;
+        top: 95px;
+        padding: 10px 15px;
+    }
+
+    ul li {
+        padding: 5px;
+        margin-left: 20px;
+        margin-bottom: 40px;
+        position: relative;
+        font-size: 12px;
+    }
+
+    ul li::before{
+        height: 15px;
+        width: 15px;
+        top: 7px;
+        left: -30px;
+    }
+
+    ul li span {
+        right: -10px;
+        top: 5px;
+        width: 20px;
+        height: 20px;
+        font-size: 20px;
+        line-height: 20px;
+    }
+
+    p {
+        font-size: 0.75rem;
+    }
+}
